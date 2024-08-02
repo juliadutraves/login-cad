@@ -17,11 +17,19 @@ function acessar(){
 
         if(nomeUser){
             dadosLista.push(nomeUser);
-            console.log(dadosLista);
+            //console.log(dadosLista);
             document.getElementById('nomeUser').value = "";
 
         }else{
             alert("Favor informar o nome para cadastro");
     }
 }
+ // Função para criar lista
+ function criaLista(){
+    let tabela = document.getElementById('table').innerHTML = "<tr><th>Nome Usuario</th><th>Ações</th></tr>";
+    for(let i = 0; i <= dadosLista.length-1 ); i++){ tabela += "<tr><td>" + dadosLista [i] + "</td><td></td></tr>";
+    document.getElementById('table').innerHTML = table;
 
+}
+
+ }
