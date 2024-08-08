@@ -9,7 +9,6 @@ function acessar(){
     }
     }
 
-
     //FUNÇÃO QUE ARMAZENA EM ARREY NOME NA TELA DE CADASTRO
 
     var dadosLista = [];
