@@ -9,6 +9,7 @@ function acessar(){
     }
     }
 
+
     //FUNÇÃO QUE ARMAZENA EM ARREY NOME NA TELA DE CADASTRO
 
     var dadosLista = [];
@@ -18,6 +19,7 @@ function acessar(){
         if(nomeUser){
             dadosLista.push(nomeUser);
             //console.log(dadosLista);
+            criaLista();
             document.getElementById('nomeUser').value = "";
 
         }else{
@@ -27,8 +29,9 @@ function acessar(){
  // Função para criar lista
  function criaLista(){
     let tabela = document.getElementById('table').innerHTML = "<tr><th>Nome Usuario</th><th>Ações</th></tr>";
-    for(let i = 0; i <= dadosLista.length-1 ); i++){ tabela += "<tr><td>" + dadosLista [i] + "</td><td></td></tr>";
-    document.getElementById('table').innerHTML = table;
+    for(let i = 0; i <= (dadosLista.length-1 ); i++){ 
+        tabela += "<tr><td>" + dadosLista [i] + "</td><td></td></tr>";
+        document.getElementById('table').innerHTML = tabela;
 
 }
 
