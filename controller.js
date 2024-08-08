@@ -25,6 +25,7 @@ function acessar(){
             alert("Favor informar o nome para cadastro");
     }
 }
+
  // Função para criar lista
  function criaLista(){
     let tabela = document.getElementById('table').innerHTML = "<tr><th>Nome Usuario</th><th>Ações</th></tr>";
