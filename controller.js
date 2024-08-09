@@ -43,8 +43,8 @@ function criaLista() {
     
     // Itera sobre o array dadosLista e adiciona cada nome à tabela
     for (let i = 0; i <= (dadosLista.length - 1); i++) {
-        // Adiciona uma linha para cada nome com um botão para editar
-        table += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button></td></tr>";
+        // Adiciona uma linha para cada nome com um botão para editar e excluir
+        table += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button type='button' onclick='excluir(this.parentNode.parentNode.rowIndex)'>excluir</button></td></tr>";
         // Atualiza o conteúdo da tabela na página
         document.getElementById('table').innerHTML = table;
     }
@@ -55,4 +55,12 @@ function editar(i) {
     document.getElementById('nomeUser').value = dadosLista[(i - 1)];
     // Remove o nome do array dadosLista
     dadosLista.splice(dadosLista[(i - 1)], 1);
+}
+
+// FUNÇÃO PARA EXCLUIR NOME DA LISTA 
+// Remove um item da lista dadosLista
+function excluir(i){
+    // comentarios sobre splice
+    dadosLista.splice((i-1), 1);
+    document.getElementById('table').deleteRow(i);
 }
