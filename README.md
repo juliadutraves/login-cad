@@ -7,6 +7,7 @@
 * [Como usar](#como-usar)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Logica do JavaScript](#lógica-do-javascript)
+* [Fontes](#fontes)
 
 # Projeto de Gerenciamento de Usuários
  
@@ -35,3 +36,5 @@ Este projeto é uma aplicação web simples que permite armazenar nomes de usuá
  
 - **`salvarUser()`**: Esta função é chamada quando o usuário clica no botão "Salvar". Ela coleta o nome digitado no campo de entrada, o adiciona ao array e atualiza a tabela com a lista de usuários.
  
+## Fontes 
+- https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
