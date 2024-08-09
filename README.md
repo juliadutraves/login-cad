@@ -37,6 +37,8 @@ Este projeto é uma aplicação web simples que permite armazenar nomes de usuá
 ## Lógica do JavaScript
  
 - **`salvarUser()`**: Esta função é chamada quando o usuário clica no botão "Salvar". Ela coleta o nome digitado no campo de entrada, o adiciona ao array e atualiza a tabela com a lista de usuários.
+
+- **`Splice()`** Altera o conteúdo de uma lista, adicionando novos elementos enquanto remove elementos antigos.
  
 ## Fontes 
 - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
