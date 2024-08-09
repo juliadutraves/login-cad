@@ -14,6 +14,8 @@
 Este projeto é uma aplicação web simples que permite armazenar nomes de usuários em um array. A interface de usuário consiste em um formulário para adicionar nomes e uma tabela que exibe todos os nomes armazenados. É ideal para entender conceitos básicos de manipulação de DOM, arrays, e armazenamento local em JavaScript.
 
 ## Fotos do projeto 
+
+![tela-logincad](https://github.com/user-attachments/assets/295611d6-17a8-425d-8777-a70b63280063)
  
 ## Funcionalidades
  
