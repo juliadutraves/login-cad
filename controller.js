@@ -61,6 +61,7 @@ function editar(i) {
 // Remove um item da lista dadosLista
 function excluir(i){
     // comentarios sobre splice
+    // Altera o conteúdo de uma lista, adicionando novos elementos enquanto remove elementos antigos.
     dadosLista.splice((i-1), 1);
     document.getElementById('table').deleteRow(i);
 }
