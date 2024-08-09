@@ -1,43 +1,58 @@
+// acessar a página de cadastro após verificar os campos de login
 function acessar() {
+    // Obtém o valor dos campos de entrada de e-mail e senha
     let loginEmail = document.getElementById('loginEmail').value;
     let loginSenha = document.getElementById('loginSenha').value;
+    
+    // Verifica se ambos os campos foram preenchidos
     if (!loginEmail || !loginSenha) {
+        // Exibe um alerta se algum dos campos estiver vazio
         alert("Favor preencher todos os campos");
     } else {
-        // alert("campos preenchidos com sucesso")
+        // Redireciona para a página de cadastro se os campos estiverem preenchidos
         window.location.href = 'cadastro.html';
     }
 }
 
-//FUNÇÃO QUE ARMAZENA EM ARREY NOME NA TELA DE CADASTRO
-
+// armazenar os nomes dos usuários
 var dadosLista = [];
+
+// Função para salvar o nome do usuário e atualizar a lista na tela
 function salvarUser() {
     let nomeUser = document.getElementById('nomeUser').value;
 
+    // Verifica se o campo não está vazio
     if (nomeUser) {
+        // Adiciona o nome ao dadosLista
         dadosLista.push(nomeUser);
-        //console.log(dadosLista);
+        // Atualiza a lista exibida na tela
         criaLista();
+        // Limpa o campo de entrada após o salvamento
         document.getElementById('nomeUser').value = "";
 
     } else {
+        // Exibe um alerta se o campo estiver vazio
         alert("Favor informar o nome para cadastro");
     }
 }
 
-// FUNÇÃO PARA CRIAR LISTA
-function criaLista(){
-    let table = document.getElementById('table').innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
-    for(let i = 0; i <= (dadosLista.length-1); i++){
+// Função para criar e atualizar a lista de usuários na tabela
+function criaLista() {
+    // Inicia a tabela com o cabeçalho
+    let table = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
+    
+    // Itera sobre o array dadosLista e adiciona cada nome à tabela
+    for (let i = 0; i <= (dadosLista.length - 1); i++) {
+        // Adiciona uma linha para cada nome com um botão para editar
         table += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button></td></tr>";
+        // Atualiza o conteúdo da tabela na página
         document.getElementById('table').innerHTML = table;
     }
 }
- 
- 
-// FUNÇÃO PARA EDITAR NOMES DA LISTA
-function editar(i){
+
+function editar(i) {
+    // Define o valor do campo de entrada para o nome selecionado
     document.getElementById('nomeUser').value = dadosLista[(i - 1)];
+    // Remove o nome do array dadosLista
     dadosLista.splice(dadosLista[(i - 1)], 1);
 }
