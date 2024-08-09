@@ -1,38 +1,43 @@
-function acessar(){
+function acessar() {
     let loginEmail = document.getElementById('loginEmail').value;
     let loginSenha = document.getElementById('loginSenha').value;
-    if(!loginEmail || !loginSenha){
+    if (!loginEmail || !loginSenha) {
         alert("Favor preencher todos os campos");
-    }else{
-       // alert("campos preenchidos com sucesso")
-       window.location.href = 'cadastro.html';
-    }
-    }
-
-    //FUNÇÃO QUE ARMAZENA EM ARREY NOME NA TELA DE CADASTRO
-
-    var dadosLista = [];
-    function salvarUser(){
-        let nomeUser = document.getElementById('nomeUser').value;
-
-        if(nomeUser){
-            dadosLista.push(nomeUser);
-            //console.log(dadosLista);
-            criaLista();
-            document.getElementById('nomeUser').value = "";
-
-        }else{
-            alert("Favor informar o nome para cadastro");
+    } else {
+        // alert("campos preenchidos com sucesso")
+        window.location.href = 'cadastro.html';
     }
 }
 
- // Função para criar lista
- function criaLista(){
-    let tabela = document.getElementById('table').innerHTML = "<tr><th>Nome Usuario</th><th>Ações</th></tr>";
-    for(let i = 0; i <= (dadosLista.length-1 ); i++){ 
-        tabela += "<tr><td>" + dadosLista [i] + "</td><td></td></tr>";
-        document.getElementById('table').innerHTML = tabela;
+//FUNÇÃO QUE ARMAZENA EM ARREY NOME NA TELA DE CADASTRO
 
+var dadosLista = [];
+function salvarUser() {
+    let nomeUser = document.getElementById('nomeUser').value;
+
+    if (nomeUser) {
+        dadosLista.push(nomeUser);
+        //console.log(dadosLista);
+        criaLista();
+        document.getElementById('nomeUser').value = "";
+
+    } else {
+        alert("Favor informar o nome para cadastro");
+    }
 }
 
- }
+// FUNÇÃO PARA CRIAR LISTA
+function criaLista(){
+    let table = document.getElementById('table').innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
+    for(let i = 0; i <= (dadosLista.length-1); i++){
+        table += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button></td></tr>";
+        document.getElementById('table').innerHTML = table;
+    }
+}
+ 
+ 
+// FUNÇÃO PARA EDITAR NOMES DA LISTA
+function editar(i){
+    document.getElementById('nomeUser').value = dadosLista[(i - 1)];
+    dadosLista.splice(dadosLista[(i - 1)], 1);
+}
