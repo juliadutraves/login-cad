@@ -8,6 +8,8 @@
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Logica do JavaScript](#lógica-do-javascript)
 * [Fontes](#fontes)
+* [Atualização](#atualizacao)
+* [Principais Melhorias](#principais-melhorias)
 
 # Projeto de Gerenciamento de Usuários
  
@@ -42,3 +44,13 @@ Este projeto é uma aplicação web simples que permite armazenar nomes de usuá
  
 ## Fontes 
 - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+# Atualização 
+
+Nesta atualização, foi adicionado um campo de entrada para o e-mail dos usuários, complementando o sistema de cadastro que anteriormente registrava apenas o nome dos usuários. Essa mudança permite um gerenciamento mais completo.
+
+## Principais Melhorias:
+ 
+1. **Campo de E-mail**:
+   - **Novo Campo de Entrada**: Agora, além do nome, o usuário pode inserir seu e-mail, o que expande as possibilidades de uso do sistema.
+   - **Validação**: Foi adicionado suporte para validar se os campos de nome e e-mail estão preenchidos antes de permitir o cadastro, garantindo que ambos os dados sejam fornecidos.
