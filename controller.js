@@ -1,67 +1,60 @@
-// acessar a página de cadastro após verificar os campos de login
-function acessar() {
-    // Obtém o valor dos campos de entrada de e-mail e senha
-    let loginEmail = document.getElementById('loginEmail').value;
-    let loginSenha = document.getElementById('loginSenha').value;
-    
-    // Verifica se ambos os campos foram preenchidos
-    if (!loginEmail || !loginSenha) {
-        // Exibe um alerta se algum dos campos estiver vazio
-        alert("Favor preencher todos os campos");
-    } else {
-        // Redireciona para a página de cadastro se os campos estiverem preenchidos
-        window.location.href = 'cadastro.html';
-    }
-}
-
-// armazenar os nomes dos usuários
+// Armazenar os dados dos usuários como um array de objetos
 var dadosLista = [];
-
-// Função para salvar o nome do usuário e atualizar a lista na tela
+ 
+// Função para salvar o nome e o e-mail do usuário e atualizar a lista na tela
 function salvarUser() {
     let nomeUser = document.getElementById('nomeUser').value;
-
-    // Verifica se o campo não está vazio
-    if (nomeUser) {
-        // Adiciona o nome ao dadosLista
-        dadosLista.push(nomeUser);
+    let emailUser = document.getElementById('emailUser').value;
+ 
+    // Verifica se os campos não estão vazios
+    if (nomeUser && emailUser) {
+        // Adiciona um objeto com o nome e e-mail ao dadosLista
+        dadosLista.push({ nome: nomeUser, email: emailUser });
+        
         // Atualiza a lista exibida na tela
         criaLista();
-        // Limpa o campo de entrada após o salvamento
+        
+        // Limpa os campos de entrada após o salvamento
         document.getElementById('nomeUser').value = "";
-
+        document.getElementById('emailUser').value = "";
     } else {
-        // Exibe um alerta se o campo estiver vazio
-        alert("Favor informar o nome para cadastro");
+        // Exibe um alerta se algum dos campos estiver vazio
+        alert("Favor informar o nome e o e-mail para cadastro");
     }
 }
-
+ 
 // Função para criar e atualizar a lista de usuários na tabela
 function criaLista() {
     // Inicia a tabela com o cabeçalho
-    let table = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
+    let table = "<tr><th>Nome Usuário</th><th>E-mail</th><th>Ações</th></tr>";
     
-    // Itera sobre o array dadosLista e adiciona cada nome à tabela
-    for (let i = 0; i <= (dadosLista.length - 1); i++) {
-        // Adiciona uma linha para cada nome com um botão para editar e excluir
-        table += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button type='button' onclick='excluir(this.parentNode.parentNode.rowIndex)'>excluir</button></td></tr>";
-        // Atualiza o conteúdo da tabela na página
-        document.getElementById('table').innerHTML = table;
+    // Itera sobre o array e adiciona cada nome e e-mail à tabela
+    for (let i = 0; i < dadosLista.length; i++) {
+        table += "<tr><td>" + dadosLista[i].nome + "</td><td>" + dadosLista[i].email + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button><button type='button' onclick='excluir(" + i + ")'>Excluir</button></td></tr>";
     }
+    
+    // Atualiza o conteúdo da tabela na página
+    document.getElementById('table').innerHTML = table;
 }
-
+ 
+// Função para editar o nome e o e-mail de um usuário 
 function editar(i) {
-    // Define o valor do campo de entrada para o nome selecionado
-    document.getElementById('nomeUser').value = dadosLista[(i - 1)];
-    // Remove o nome do array dadosLista
-    dadosLista.splice(dadosLista[(i - 1)], 1);
+    // Define os valores dos campos de entrada para os dados selecionados
+    document.getElementById('nomeUser').value = dadosLista[i].nome;
+    document.getElementById('emailUser').value = dadosLista[i].email;
+    
+    // Remove o item 
+    dadosLista.splice(i, 1);
+    
+    // Atualiza a lista exibida na tela
+    criaLista();
 }
-
-// FUNÇÃO PARA EXCLUIR NOME DA LISTA 
-// Remove um item da lista dadosLista
-function excluir(i){
-    // comentarios sobre splice
-    // Altera o conteúdo de uma lista, adicionando novos elementos enquanto remove elementos antigos.
-    dadosLista.splice((i-1), 1);
-    document.getElementById('table').deleteRow(i);
+ 
+// Função para excluir um usuário 
+function excluir(i) {
+    // Remove o item 
+    dadosLista.splice(i, 1);
+    
+    // Remove a linha da tabela correspondente
+    document.getElementById('table').deleteRow(i + 1);
 }
