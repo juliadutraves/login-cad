@@ -10,6 +10,7 @@
 * [Fontes](#fontes)
 * [Atualização](#atualizacao)
 * [Principais Melhorias](#principais-melhorias)
+* [Fotos da atualização](#fotos-da-atualização)
 
 # Projeto de Gerenciamento de Usuários
  
@@ -51,6 +52,11 @@ Nesta atualização, foi adicionado um campo de entrada para o e-mail dos usuár
 
 ## Principais Melhorias:
  
-1. **Campo de E-mail**:
+**Campo de E-mail**:
    - **Novo Campo de Entrada**: Agora, além do nome, o usuário pode inserir seu e-mail, o que expande as possibilidades de uso do sistema.
    - **Validação**: Foi adicionado suporte para validar se os campos de nome e e-mail estão preenchidos antes de permitir o cadastro, garantindo que ambos os dados sejam fornecidos.
+
+## Fotos da atualização
+
+![telacadastro](https://github.com/user-attachments/assets/445458a5-e60d-4d9f-9510-98571cb268b0)
+
